@@ -16,10 +16,13 @@
         <a href="/" class="text-xl text-white"> MessDjango </a>
     </div>
     <div class="flex items-center gap-4">
-<!--          <div class="flex items-center space-x-4">-->
-
+        {%  if request.user.is_authenticated %}
+        <a href="/chats/" class="text-xl text-white hover:text-blue-300">Chats </a>
+        <a href="/logout/" class="text-xl text-white px-3 py-2 rounded-xl bg-blue-300 hover:bg-green-600">Log out</a>
+        {% else %}
         <a href="/login/" class="text-xl text-white hover:text-blue-300">Log in </a>
         <a href="/signup/" class="text-xl text-white px-3 py-2 rounded-xl bg-blue-300 hover:bg-green-600">Sign up</a>
+        {% endif %}
     </div>
 </nav>
 
