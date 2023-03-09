@@ -1,21 +1,20 @@
-{% extends "core/base.html" %}
+{% extends 'core/base.html' %}
+
 {% block title %}Chats{% endblock %}
 
 {% block content %}
-
-<div class="text-center py-16">
-    <h1 class="text-2xl text-white">Chats</h1>
+<div class="text-center">
+    <h1 class="text-2xl text-white py-16">Your chats</h1>
 </div>
 
-<div class="flex item-center w-full">
+<div class="flex items-center w-full justify-center">
     {% for chat in chats %}
-        <div class="w-1/3 px-3 py-3">
+        <div class="w-1/3 p-3">
             <div class="bg-white text-center rounded-xl p-4">
-                <p class="mb-5 text-2xl"> {{ chat.chat }} </p>
-                <a href="{% url 'chat' chat.slug %}" class="text-xl text-white px-3 py-2 rounded-xl bg-blue-800 hover:bg-green-600">Join chat</a>
+                <p class="mb-5 text-2xl font-bold">{{ chat.chat }}</p>
+                <a href="{% url 'chat' chat.slug %}" class="text-white text-xl px-3 py-1 bg-blue-300 hover:bg-green-600 rounded-lg">Join chat</a>
             </div>
         </div>
     {% endfor %}
 </div>
-
 {% endblock %}
